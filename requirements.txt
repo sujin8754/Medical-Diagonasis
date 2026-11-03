@@ -1,0 +1,19 @@
+# Explainable AI Framework for Medical Diagnosis - Python dependencies
+#
+# Install with (Windows / macOS / Linux, inside a virtual environment):
+#   pip install -r requirements.txt
+#
+# Tested with Python 3.10 - 3.12. Minimum versions are given below rather
+# than exact pins so the project installs cleanly on a normal laptop without
+# requiring an unusually new or old Python interpreter.
+
+numpy>=1.26
+pandas>=2.0
+scikit-learn>=1.3
+xgboost>=2.0
+shap>=0.44
+lime>=0.2.0.1
+matplotlib>=3.7
+seaborn>=0.12
+joblib>=1.3
+streamlit>=1.30

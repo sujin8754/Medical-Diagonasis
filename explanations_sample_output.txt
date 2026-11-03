@@ -1,0 +1,47 @@
+================================================================================
+Malignant example (true label = Malignant)
+================================================================================
+The model predicts **Malignant** with a 100.0% estimated probability of malignancy.
+The most influential factors behind this prediction were:
+  - **radius error** = 1.004 increased the malignancy risk (toward Malignant), contributing +2.529 to the prediction score.
+  - **mean concave points** = 0.131 increased the malignancy risk (toward Malignant), contributing +2.015 to the prediction score.
+  - **worst concavity** = 0.699 increased the malignancy risk (toward Malignant), contributing +1.806 to the prediction score.
+  - **area error** = 137.900 increased the malignancy risk (toward Malignant), contributing +1.803 to the prediction score.
+  - **mean concavity** = 0.271 increased the malignancy risk (toward Malignant), contributing +1.779 to the prediction score.
+
+Summary: 5 of the top 5 factors pushed the prediction toward Malignant, while 0 pushed it toward Benign. The final decision reflects the combined (additive) effect of all 30 input features, not just these top factors.
+
+LIME top contributing features (for comparison):
+  radius error > 0.25                      weight=+0.2284
+  compactness error > 0.38                 weight=-0.1814
+  area error > 0.09                        weight=+0.1795
+  mean concave points > 0.63               weight=+0.1779
+  worst area > 0.40                        weight=+0.1682
+
+SHAP vs LIME agreement on top-5 features: 3/5 features overlap (60%)
+  SHAP top-5: ['area error', 'mean concave points', 'mean concavity', 'radius error', 'worst concavity']
+  LIME top-5 (matched to SHAP names): ['area error', 'mean concave points', 'radius error']
+
+================================================================================
+Benign example (true label = Benign)
+================================================================================
+The model predicts **Benign** with a 0.0% estimated probability of malignancy.
+The most influential factors behind this prediction were:
+  - **worst texture** = 15.970 decreased the malignancy risk (toward Benign), contributing -2.599 to the prediction score.
+  - **radius error** = 0.141 decreased the malignancy risk (toward Benign), contributing -1.144 to the prediction score.
+  - **mean texture** = 10.820 decreased the malignancy risk (toward Benign), contributing -1.030 to the prediction score.
+  - **texture error** = 0.461 increased the malignancy risk (toward Malignant), contributing +0.641 to the prediction score.
+  - **worst radius** = 12.820 decreased the malignancy risk (toward Benign), contributing -0.638 to the prediction score.
+
+Summary: 1 of the top 5 factors pushed the prediction toward Malignant, while 4 pushed it toward Benign. The final decision reflects the combined (additive) effect of all 30 input features, not just these top factors.
+
+LIME top contributing features (for comparison):
+  worst texture <= -0.73                   weight=-0.2419
+  radius error <= -0.61                    weight=-0.1469
+  worst radius <= -0.68                    weight=-0.1291
+  worst perimeter <= -0.69                 weight=-0.1130
+  worst area <= -0.64                      weight=-0.1028
+
+SHAP vs LIME agreement on top-5 features: 3/5 features overlap (60%)
+  SHAP top-5: ['mean texture', 'radius error', 'texture error', 'worst radius', 'worst texture']
+  LIME top-5 (matched to SHAP names): ['radius error', 'worst radius', 'worst texture']
